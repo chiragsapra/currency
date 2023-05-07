@@ -1,5 +1,12 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
+    http_client:
+        scoped_clients:
+            exchangeApiClient:
+                base_uri: "https://cdn.jsdelivr.net/gh/fawazahmed0/"
+        max_host_connections: 10
+        default_options:
+            max_redirects: 7
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
     http_method_override: false
