@@ -1,0 +1,7 @@
+{% extends('base.html.twig') %}
+{% block title %}Get Rate
+{% endblock %}
+{% block body %}
+	<h4>The conversion rate on {{ date }} from {{ from }} to {{ to }} is {{ rate }}.</h4>
+    <a class="btn btn-primary" href="{{ path('app_exchange_check') }}" role="button">Check More</a>
+    {% endblock %}

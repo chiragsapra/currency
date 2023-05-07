@@ -1,0 +1,11 @@
+{% extends('base.html.twig') %}
+{% block title %}Get Exchange Rate
+{% endblock %}
+{% block body %}
+	{% for message in app.flashes('failed') %}
+		<div class="alert alert-danger">
+			{{ message }}
+		</div>
+	{% endfor %}
+	<h2>Get Exchange Rate</h2>
+	{{ form(form) }}{% endblock %}
