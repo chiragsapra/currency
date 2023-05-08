@@ -1,25 +1,23 @@
 # Symfony App for Currency Exchange System
 
-The app is created in Symfony framework.
-You can download the code and run `composer update` to install the dependancies.
+### The app is created in Symfony framework.
 
-Change the mysql credentials in .env file and run `php bin/console doctrine:schema:update --force` to create the required tables in db
+#### Steps to run the applicarion:
+1. User can create clone of the code and run `composer update` to install the framework and its dependancies.
+2. Copy the .env.example file and rename it as .env and change the database credentials to connect with database.
+3. Run `php bin/console doctrine:schema:update --force` to create the required tables in database.
+4. Can also import the exchange.sql file to database which has some sample data.
 
-Here are the details of application
+#### To access the website use below mentioned urls to get or add respective data
+1. Get Currency: /currency
+This URL gives the table containing all the currencies available to convert in the application.
+2. Add Currency: /currency/add
+User can add the currencies in the system with the help of this URL.
+3. Exchanges History: /exchange/
+This URL gives the table containing all the past currencies converion with date.
+4. Get Exchange Rate: /exchange/add
+User can check the conversion rate with the help of this URL and will also save the data in the database.
 
-1. User can access the app via api with different endpoints. Below is the urls [All are GET requests]
-    1. All Currencies: /api/currency.
-    2. Get Exchange: /api/exchange/{cur}/{date} cur: currency code, date: date in format YYYY-MM-DD, or latest for today date.
-
-2. To add the entry in database use below urls also can access the app .
-    1. Add Currency: /currency/add
-    2. Add Exchange: /exchange/add
-    3. Get Exchange: /exchange/data/{cur}/{date}
-    4. Get Currency: /currency
-
-To scale the application
-    1. User can add different currencies exchange that will store the data and just have to pass the code to url to get data accordingly.
-    2. Can add validation for currency code check and avilability in system.
-    3. In add exchange data form can add dropdowns of avilable currency exchange rate that are allowed to add.
-
-For refrence here is the attached db with file name exchang.sql
+#### To scale the application
+1. User can add as many currencies as want according to the requirement in the system so there are more options avilable to check for the conversions.
+2. Can create the API endpoints so it will be easily integrated with different systems.
